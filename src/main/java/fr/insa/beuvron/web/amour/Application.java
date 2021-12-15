@@ -1,4 +1,4 @@
-package vaadinstarter;
+package fr.insa.beuvron.web.amour;
 
 import com.vaadin.flow.component.dependency.NpmPackage;
 import org.springframework.boot.SpringApplication;
