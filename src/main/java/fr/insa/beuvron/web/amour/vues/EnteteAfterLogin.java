@@ -16,6 +16,8 @@ public class EnteteAfterLogin extends MyHorizontalLayout {
     private VuePrincipale main;
     
     private Button vbLogout;
+    private Button vbListeDesUtilisateurs;
+    private Button vbGestionAmours;
     
     public EnteteAfterLogin(VuePrincipale main) {
         this.main = main;
@@ -24,7 +26,15 @@ public class EnteteAfterLogin extends MyHorizontalLayout {
         this.vbLogout.addClickListener((event) -> {
             this.doLogout();
         });
-        this.add(this.vbLogout);
+        this.vbListeDesUtilisateurs = new Button("liste des utilisateurs");
+        this.vbListeDesUtilisateurs.addClickListener((event) -> {
+            this.main.setMainContent(new ListeDesUtilisateurs(this.main));
+        });
+        this.vbGestionAmours = new Button("Gérer vos amours");
+        this.vbGestionAmours.addClickListener((event) -> {
+            this.main.setMainContent(new MainAfterLogin(this.main));
+        });
+        this.add(this.vbLogout,this.vbListeDesUtilisateurs,this.vbGestionAmours);
     }
     
     public void doLogout() {

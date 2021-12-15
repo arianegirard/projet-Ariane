@@ -5,6 +5,7 @@
 package fr.insa.beuvron.web.amour;
 
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import fr.insa.beuvron.web.amour.bdd.Aime;
 import fr.insa.beuvron.web.amour.vues.BdDNonAccessible;
@@ -20,6 +21,7 @@ import java.sql.SQLException;
  * @author francois
  */
 @Route(value = "")
+@PageTitle("Amours")
 public class VuePrincipale extends MyVerticalLayout {
     
 

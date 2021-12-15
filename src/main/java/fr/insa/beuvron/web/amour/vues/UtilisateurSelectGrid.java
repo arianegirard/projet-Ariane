@@ -14,8 +14,8 @@ import java.util.List;
  */
 public class UtilisateurSelectGrid extends UtilisateurGrid{ 
     
-    public UtilisateurSelectGrid(VuePrincipale main,List<Utilisateur> datas) {
-        super(main,datas);
+    public UtilisateurSelectGrid(List<Utilisateur> datas) {
+        super(datas);
         this.setSelectionMode(SelectionMode.MULTI);
     }
         

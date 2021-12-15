@@ -16,22 +16,21 @@ import java.util.List;
  */
 public class UtilisateurGrid extends Grid<Utilisateur>{ 
     
-    private VuePrincipale main;
-    
     private List<Utilisateur> datas;
     
-    public UtilisateurGrid(VuePrincipale main,List<Utilisateur> datas) {
-        this.main = main;
+    public UtilisateurGrid(List<Utilisateur> datas) {
         this.datas = datas;
         
-        Column<Utilisateur> cID = this.addColumn(Utilisateur::getId).setHeader("ID");
+        Column<Utilisateur> cID = this.addColumn(Utilisateur::getId)
+                .setHeader("ID");
         cID.setWidth("3em");
-        Column<Utilisateur> cNom = this.addColumn(Utilisateur::getNom).setHeader("Nom");
+        Column<Utilisateur> cNom = this.addColumn(Utilisateur::getNom)
+                .setHeader("Nom");
         cNom.setSortable(true);
         
         this.setItems(datas);
         // pour affichage compact pour transparents
-        this.setMaxHeight("12em");
+        // this.setMaxHeight("12em");
     }
     
     public void addUtilisateurs(Collection<Utilisateur> toAdd) {

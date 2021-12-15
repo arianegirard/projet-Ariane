@@ -64,7 +64,7 @@ public class PanneauModifyAime extends MyVerticalLayout {
         try {
             List<Utilisateur> datas = Aime.quiNeSontPasAimesPar(
                     this.main.getSessionInfo().getConBdD(), this.main.getSessionInfo().getCurUser().orElseThrow());
-            this.vpasAime = new UtilisateurSelectGrid(this.main, datas);
+            this.vpasAime = new UtilisateurSelectGrid(datas);
             vlPasAimes.add(this.vpasAime);
         } catch (SQLException ex) {
             vlPasAimes.add(new H1("Probleme BdD"));
@@ -91,7 +91,7 @@ public class PanneauModifyAime extends MyVerticalLayout {
         try {
             List<Utilisateur> datas = Aime.quiSontAimesPar(
                     this.main.getSessionInfo().getConBdD(), this.main.getSessionInfo().getCurUser().orElseThrow());
-            this.vaime = new UtilisateurSelectGrid(this.main, datas);
+            this.vaime = new UtilisateurSelectGrid(datas);
             vlAime.add(this.vaime);
         } catch (SQLException ex) {
             vlAime.add(new H1("Probleme BdD"));

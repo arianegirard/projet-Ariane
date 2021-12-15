@@ -301,6 +301,25 @@ public class Aime {
         }
     }
 
+    public static List<Utilisateur> tousLesUtilisateurs(Connection con) throws SQLException {
+        List<Utilisateur> res = new ArrayList<>();
+        try ( PreparedStatement pst = con.prepareStatement(
+                """
+               select id,nom,pass
+                 from Utilisateur
+                 order by nom asc
+               """
+        )) {
+            try ( ResultSet rs = pst.executeQuery()) {
+                while (rs.next()) {
+                    res.add(new Utilisateur(rs.getInt("id"),
+                            rs.getString("nom"), rs.getString("pass")));
+                }
+                return res;
+            }
+        }
+    }
+
     public static List<Utilisateur> quiAiment(Connection con, Utilisateur user) throws SQLException {
         List<Utilisateur> res = new ArrayList<>();
         try ( PreparedStatement pst = con.prepareStatement(

@@ -19,6 +19,7 @@ public class SessionInfo {
 
     public SessionInfo() {
         this.curUser = Optional.empty();
+        this.conBdD = null;
     }
 
     public boolean userConnected() {

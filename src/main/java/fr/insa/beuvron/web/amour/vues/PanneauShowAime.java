@@ -31,7 +31,7 @@ public class PanneauShowAime extends MyVerticalLayout {
         try {
             List<Utilisateur> datas = Aime.quiSontAimesPar(
                     this.main.getSessionInfo().getConBdD(), this.main.getSessionInfo().getCurUser().orElseThrow());
-            vlAime.add(new UtilisateurGrid(this.main,datas));
+            vlAime.add(new UtilisateurGrid(datas));
         } catch (SQLException ex) {
             vlAime.add(new H1("Probleme BdD"));
         }
@@ -41,7 +41,7 @@ public class PanneauShowAime extends MyVerticalLayout {
         try {
             List<Utilisateur> datas = Aime.quiAiment(
                     this.main.getSessionInfo().getConBdD(), this.main.getSessionInfo().getCurUser().orElseThrow());
-            vlAimePar.add(new UtilisateurGrid(this.main,datas));
+            vlAimePar.add(new UtilisateurGrid(datas));
         } catch (SQLException ex) {
             vlAimePar.add(new H1("Probleme BdD"));
         }
@@ -54,7 +54,7 @@ public class PanneauShowAime extends MyVerticalLayout {
         try {
             List<Utilisateur> datas = Aime.quiNeSontPasAimesPar(
                     this.main.getSessionInfo().getConBdD(), this.main.getSessionInfo().getCurUser().orElseThrow());
-            vlPasAimes.add(new UtilisateurGrid(this.main,datas));
+            vlPasAimes.add(new UtilisateurGrid(datas));
         } catch (SQLException ex) {
             vlPasAimes.add(new H1("Probleme BdD"));
         }
@@ -64,7 +64,7 @@ public class PanneauShowAime extends MyVerticalLayout {
         try {
             List<Utilisateur> datas = Aime.vraiAmisDe(
                     this.main.getSessionInfo().getConBdD(), this.main.getSessionInfo().getCurUser().orElseThrow());
-            vlAmis.add(new UtilisateurGrid(this.main,datas));
+            vlAmis.add(new UtilisateurGrid(datas));
         } catch (SQLException ex) {
             vlAmis.add(new H1("Probleme BdD"));
         }
